@@ -3,16 +3,17 @@ const cors = require("cors");
 const redis = require('redis');
 const client = redis.createClient({
 	port: 6379,
-	host: '127.0.0.1'
+	host: 'redis'
 })
 
-client.on("error", () => {
+client.on("error", (error) => {
 	console.error(error);
 })
 
-client.set("name", "temi", redis.print);
-client.set("description", "Temi's description", redis.print);
-client.set("joke", "Temi's joke", redis.print);
+client.set("name", "Temilola Onaneye", redis.print);
+client.set("description", "Casual, Jovial, Passionate and somebody's lover", redis.print);
+client.set("joke", `What do you call two birds in love?
+Tweethearts!`, redis.print);
 
 // const mongoose = require("mongoose");
 
