@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en-US">
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>About</title>
+    <meta name="msapplication-tap-highlight" , content="none" />
+    <meta name="description" content="">
+    <meta name="msapplication-navbutton-color" content="#FF9800">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="msapplication-starturl" content="index.html">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+    <link rel='stylesheet' type='text/css' media='screen' href='./src/css/about.css'>
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="topnav" id="myTopnav">
+            <a href="/home" >Home</a>
+            <a href="/about"class="active">About</a>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+
+    </header>
+    <main>
+        <div class="body-content">
+            <div class="card">
+              <div>
+                <h2 id="name">Fname Lname</h2>
+                <p id="title" class="title">CEO & Founder, Example</p>
+                <p id="bio">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti quas quidem id necessitatibus est neque dolores molestiae! Pariatur, accusamus mollitia! Quaerat maxime maiores saepe dignissimos aut dicta nesciunt eos corporis.</p>
+                <br>
+                <br>
+                <p id="joke">favourite joke</p>
+              </div>
+            </div>
+            <p>Click the link below to return to the home page</p>
+            <div class="button"><a id="get-started" href="/home">Home Page</a></div>
+        </div>
+
+    </main>
+    <footer>
+    </footer>
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+    </script>
+    <script>
+        // const result = await fetch('/api/register', {
+		// 			method: 'POST',
+		// 			headers: {
+		// 				'Content-Type': 'application/json'
+		// 			},
+		// 			body: JSON.stringify({
+		// 				username,
+		// 				password
+		// 			})
+		// 		}).then((res) => res.json())
+    </script>
+</body>
+
+</html>

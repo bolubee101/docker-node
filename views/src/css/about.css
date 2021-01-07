@@ -1,0 +1,67 @@
+@font-face {
+    font-family: 'Nunito', Verdana, sans-serif;
+    src: url("./fonts/OpenSans-Regular.ttf");
+}
+
+* {
+    font-family: 'Nunito', Verdana, sans-serif;
+    box-sizing: border-box;
+    font-size: 1rem;
+    scroll-behavior: smooth;  
+}
+
+body {
+    width: 100%;
+    height: auto;
+}
+header{
+    margin:10px;
+}
+
+.topnav {
+    background-color: lightgrey;
+    overflow: hidden;
+  }
+  
+  .topnav a {
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .topnav a:hover {
+    background-color:lightblue;
+    color: black;
+  }
+  
+  
+  .topnav a.active {
+    background-color: plum;
+    color: white;
+  }
+  
+  .topnav .icon {
+    display: none;
+  }
+  .body-content{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 700px;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+  }
+  
+  .title {
+    color: grey;
+    font-size: 18px;
+  }

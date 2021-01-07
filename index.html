@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en-US">
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Certlify</title>
+    <meta name="msapplication-tap-highlight" , content="none" />
+    <meta name="description" content="">
+    <meta name="msapplication-navbutton-color" content="#FF9800">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="msapplication-starturl" content="index.html">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+    <link rel='stylesheet' type='text/css' media='screen' href='./src/css/main.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="topnav" id="myTopnav">
+            <a href="/home" class="active">Home</a>
+  <a href="/about">About</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+        </div>
+
+    </header>
+    <main>
+        <div class="body-content">
+            <section class="item">
+                <h1>Welcome to the greatest home page ever!
+                </h1>
+                <p>Landing pages are like food, they should be visually pleasing, with good aroma.</p>
+                <p>But at the end of the day, as long as its not poison, and it's edible, thats all that matter. I don't think this is poison</p>
+            </section>
+
+            <!-- <section class="item">
+                <h1>Asking leads to knowing(sometimes)</h1>
+                <div class="button"><a id="get-started" href="/about">About me</a></div>
+            </section> -->
+
+
+            <br>
+            <br>
+            <p>Click the link below to move straingt to the about page</p>
+            <div class="button"><a id="get-started" href="/about">About me</a></div>
+        </div>
+       
+    </main>
+    
+    <footer>
+    </footer>
+    <script>
+        function myFunction() {
+          var x = document.getElementById("myTopnav");
+          if (x.className === "topnav") {
+            x.className += " responsive";
+          } else {
+            x.className = "topnav";
+          }
+        }
+        </script>
+</body>
+
+</html>
