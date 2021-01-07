@@ -1,5 +1,19 @@
 const express = require("express");
 const cors = require("cors");
+const redis = require('redis');
+const client = redis.createClient({
+	port: 6379,
+	host: '127.0.0.1'
+})
+
+client.on("error", () => {
+	console.error(error);
+})
+
+client.set("name", "temi", redis.print);
+client.set("description", "Temi's description", redis.print);
+client.set("joke", "Temi's joke", redis.print);
+
 // const mongoose = require("mongoose");
 
 // // For session Storage
@@ -28,29 +42,43 @@ app.use(express.json({ limit: "10mb" }));
 
 
 app.get('/home', (req, res) => {
-  res.sendFile(__dirname + "/index.html");
+	res.sendFile(__dirname + "/index.html");
 });
 app.get("/about", (req, res) => {
-  res.sendFile(__dirname + "/about.html");
+	res.sendFile(__dirname + "/about.html");
 })
 
 
-app.get('*', (req, res) => {
-  res.status(404);
+app.get('/details', (req, res) => {
+	var name, joke, desc;
+	client.get("name", function (e, val) {
+		name = val;
+	});
+	client.get("joke", function (e, val) {
+		joke = val;
+	});
+	client.get("description", function (e, val) {
+		desc = val
+		res.status(200).json({ name, joke, desc })
+	});
+})
 
-  res.json({
-    status: false,
-    message: "endpoin not found"
-  });
+app.get('*', (req, res) => {
+	res.status(404);
+
+	res.json({
+		status: false,
+		message: "endpoint not found"
+	});
 });
 
 
 const PORT = process.env.PORT || 3333;
 
-let server=app.listen(PORT, () => {
-  console.log(`server running on port ${PORT}`);
+let server = app.listen(PORT, () => {
+	console.log(`server running on port ${PORT}`);
 });
 server.on('clientError', (err, socket) => {
-  console.error(err);
-  socket.end('HTTP/1.1 400 Bad Request\r\n\r\n');
+	console.error(err);
+	socket.end('HTTP/1.1 400 Bad Request\r\n\r\n');
 });

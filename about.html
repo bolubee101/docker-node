@@ -21,8 +21,8 @@
 
     <header>
         <div class="topnav" id="myTopnav">
-            <a href="/home" >Home</a>
-            <a href="/about"class="active">About</a>
+            <a href="/home">Home</a>
+            <a href="/about" class="active">About</a>
             <a href="javascript:void(0);" class="icon" onclick="myFunction()">
                 <i class="fa fa-bars"></i>
             </a>
@@ -32,14 +32,16 @@
     <main>
         <div class="body-content">
             <div class="card">
-              <div>
-                <h2 id="name">Fname Lname</h2>
-                <p id="title" class="title">CEO & Founder, Example</p>
-                <p id="bio">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti quas quidem id necessitatibus est neque dolores molestiae! Pariatur, accusamus mollitia! Quaerat maxime maiores saepe dignissimos aut dicta nesciunt eos corporis.</p>
-                <br>
-                <br>
-                <p id="joke">favourite joke</p>
-              </div>
+                <div>
+                    <h2 id="name">Fname Lname</h2>
+                    <p id="title" class="title">CEO & Founder, Example</p>
+                    <p id="bio">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti quas quidem id
+                        necessitatibus est neque dolores molestiae! Pariatur, accusamus mollitia! Quaerat maxime maiores
+                        saepe dignissimos aut dicta nesciunt eos corporis.</p>
+                    <br>
+                    <br>
+                    <p id="joke">favourite joke</p>
+                </div>
             </div>
             <p>Click the link below to return to the home page</p>
             <div class="button"><a id="get-started" href="/home">Home Page</a></div>
@@ -49,26 +51,38 @@
     <footer>
     </footer>
     <script>
-        function myFunction() {
-            var x = document.getElementById("myTopnav");
-            if (x.className === "topnav") {
-                x.className += " responsive";
-            } else {
-                x.className = "topnav";
+        const redis =
+
+            function myFunction() {
+                var x = document.getElementById("myTopnav");
+                if (x.className === "topnav") {
+                    x.className += " responsive";
+                } else {
+                    x.className = "topnav";
+                }
             }
+
+        function appendRelevantDetails() {
+            var name = document.getElementById("name");
+            var description = document.getElementById("bio");
+            var tagline = document.getElementById("joke");
+            // fetch from server
+            let host = 'localhost:3333';
+            let temisDetails = fetch(`/details`)
+                .then(res => res.json())
+                .then(data => {
+                    name.innerText = data.name
+                    description.innerText = data.joke
+                    tagline.innerText = data.desc
+                })
+                .catch(e => console.log(e))
+
         }
+
+        window.onload = appendRelevantDetails();
     </script>
     <script>
-        // const result = await fetch('/api/register', {
-		// 			method: 'POST',
-		// 			headers: {
-		// 				'Content-Type': 'application/json'
-		// 			},
-		// 			body: JSON.stringify({
-		// 				username,
-		// 				password
-		// 			})
-		// 		}).then((res) => res.json())
+
     </script>
 </body>
 
