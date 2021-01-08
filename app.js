@@ -15,25 +15,6 @@ client.set("description", "Casual, Jovial, Passionate and somebody's lover", red
 client.set("joke", `What do you call two birds in love?
 Tweethearts!`, redis.print);
 
-// const mongoose = require("mongoose");
-
-// // For session Storage
-
-// const config = require("./config/database");
-// let configuration = process.env.DATABASE || config.database;
-// // connect to database
-// mongoose.connect(configuration, {
-//   useNewUrlParser: true,
-//   useUnifiedTopology: true,
-// });
-
-// const db = mongoose.connection;
-// db.on("error", console.error.bind(console, "connection error:"));
-// db.once("open", function () {
-//   console.log("mongodb connection established");
-// });
-
-// initialize app
 const app = express();
 
 // middlewares
