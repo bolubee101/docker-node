@@ -1,3 +1,3 @@
-FROM nginx:1.13
+FROM nginx
 
-COPY nginx.conf /etc/nginc/conf.d/default.conf
+COPY nginx.conf /etc/nginx/conf.d/default.conf
